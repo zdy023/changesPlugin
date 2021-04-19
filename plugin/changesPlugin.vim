@@ -87,13 +87,13 @@ if !hasmapto("ah", 'o') && empty(maparg('ah', 'o'))
 endif
 
 if !hasmapto('<Plug>(ChangesStageHunk)') && empty(maparg('<Leader>h', 'n'))
-  nmap     <silent><unique><nowait> <Leader>h <Plug>(ChangesStageHunk)
+  nmap     <silent><unique> <Leader>h <Plug>(ChangesStageHunk)
   nnoremap <unique><script> <Plug>(ChangesStageHunk) <sid>ChangesStageHunkAdd
   nnoremap <sid>ChangesStageHunkAdd :<c-u>call changes#StageHunk(line('.'), 0)<cr>
 endif
 
 if !hasmapto('<Plug>(ChangesStageHunkRevert)') && empty(maparg('<Leader>H', 'n'))
-  nmap     <silent><unique><nowait> <Leader>H <Plug>(ChangesStageHunkRevert)
+  nmap     <silent><unique> <Leader>H <Plug>(ChangesStageHunkRevert)
   nnoremap <unique><script> <Plug>(ChangesStageHunkRevert) <sid>ChangesStageHunkRevert
   nnoremap <sid>ChangesStageHunkRevert :<c-u>call changes#StageHunk(line('.'), 1)<cr>
 endif
